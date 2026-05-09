@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include <string>
+#include "Inventory.h"
 
 class Player {
 private:
@@ -9,6 +10,7 @@ private:
     int health;
     int maxHealth;
     int attackPower;
+    Inventory inventory;
 
 public:
     Player();
@@ -23,6 +25,8 @@ public:
     int getAttackPower() const;
 
     void displayStatus() const;
+    void showInventory() const;
+    void addItem(const Item& item);
 };
 
 #endif
