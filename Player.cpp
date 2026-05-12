@@ -4,12 +4,12 @@
 using namespace std;
 
 Player::Player()
-    : name("Hero"), health(100), maxHealth(100), attackPower(10), inventory(5) {
+    : name("Hero"), health(100), maxHealth(100), attackPower(10), x(0), y(0), inventory(5) {
     cout << "Default constructor called for Player." << endl;
 }
 
 Player::Player(string name, int health, int attackPower)
-    : name(name), health(health), maxHealth(health), attackPower(attackPower), inventory(10) {
+    : name(name), health(health), maxHealth(health), attackPower(attackPower), x(0), y(0), inventory(10) {
     cout << "Overloaded constructor called." << endl;
 }
 
@@ -43,6 +43,22 @@ int Player::getMaxHealth() const {
 
 int Player::getAttackPower() const {
     return attackPower;
+}
+
+int Player::getX() const {
+    return x;
+}
+
+int Player::getY() const {
+    return y;
+}
+
+void Player::setX(int x) {
+    this->x = x;
+}
+
+void Player::setY(int y) {
+    this->y = y;
 }
 
 void Player::displayStatus() const {
